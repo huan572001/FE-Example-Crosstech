@@ -1,4 +1,4 @@
-import {  createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface IModalState {
   isOpenModal: boolean;
 }
@@ -11,18 +11,22 @@ export const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    setOpenModal: (state) => {
-      state.isOpenModalWallet = true;
+    setOpenModal: (
+      state,
+      action: PayloadAction<{
+        isOpenModal: boolean;
+      }>,
+    ) => {
+      console.log(action.payload.isOpenModal);
+
+      state.isOpenModal = action.payload.isOpenModal;
     },
     setCloseModal: (state) => {
-      state.isOpenModalWallet = false;
+      state.isOpenModal = false;
     },
   },
 });
 
-export const {
-  setOpenModal,
-  setCloseModal,
-} = modalSlice.actions;
+export const { setOpenModal, setCloseModal } = modalSlice.actions;
 
 export default modalSlice.reducer;
