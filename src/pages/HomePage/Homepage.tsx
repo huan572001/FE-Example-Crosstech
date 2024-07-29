@@ -1,6 +1,7 @@
 import { AppButton } from "@/components/button/AppButton";
 import { useAppDispatch } from "@/hooks/store";
 import { setOpenModal } from "@/redux/slice/modalSlice";
+import { ListAccount } from "./component";
 
 export const Homepage = () => {
   const dispatch = useAppDispatch();
@@ -16,8 +17,9 @@ export const Homepage = () => {
         onClick={() => onOpenModal()}
         className="cursor-pointer"
       >
-        hihi
+        redux
       </AppButton>
+      <ListAccount />
     </div>
   );
 };

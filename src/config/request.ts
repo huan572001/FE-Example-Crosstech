@@ -5,7 +5,7 @@ export const request = axios.create({
   headers: {
     "content-type": "application/json;charset=UTF-8",
   },
-  baseURL: import.meta.env.VITE_APP_BASE_URL,
+  baseURL: "https://jsonplaceholder.typicode.com",
   timeout: 50000,
 });
 
@@ -21,7 +21,7 @@ request.interceptors.request.use((config) => {
 });
 
 request.interceptors.response.use((response) => {
-  if (response.data) return response.data;
+  if (response) return response;
 
   return response;
 });
