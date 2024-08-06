@@ -7,7 +7,6 @@ export const ListAccount = () => {
   const getAllData = async () => {
     try {
       const rq = await HomeAPI.getAllUser();
-
       setData(rq);
     } catch (error) {
       console.log(error);
@@ -16,11 +15,11 @@ export const ListAccount = () => {
   const getData = async () => {
     try {
       const rq = await HomeAPI.getUser("1");
-      console.log(rq);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getAllData();
     getData();

@@ -28,3 +28,13 @@ export interface IUser {
     bs: string;
   };
 }
+
+export interface IUserST {
+  id: number;
+  address: string;
+  token: string;
+  twitterUsername: string;
+  telegramId: string;
+  twitterId: string;
+  discordId: string;
+}

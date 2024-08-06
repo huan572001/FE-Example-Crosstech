@@ -1,4 +1,5 @@
 import { Spin } from "antd";
+import clsx from "clsx";
 import React from "react";
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {
@@ -45,7 +46,10 @@ export const AppButton: React.FC<AppButtonProps> = ({
   return (
     <button
       disabled={disabled || loading}
-      className={`${className} border px-3 py-1 rounded-xl bg-customColor`}
+      className={clsx(
+        disabled ? "bg-indigo-50" : "",
+        `${className} border px-3 py-1 rounded-xl bg-customColor`,
+      )}
       onClick={(e) => handleClick(e)}
       {...rest}
       type={type}

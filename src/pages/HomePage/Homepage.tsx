@@ -2,6 +2,7 @@ import { AppButton } from "@/components/button/AppButton";
 import { useAppDispatch } from "@/hooks/store";
 import { setOpenModal } from "@/redux/slice/modalSlice";
 import { ListAccount } from "./component";
+import { TestAPI } from "./component/TestAPI";
 
 export const Homepage = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,7 @@ export const Homepage = () => {
         redux
       </AppButton>
       <ListAccount />
+      <TestAPI />
     </div>
   );
 };
