@@ -38,3 +38,9 @@ export interface IUserST {
   twitterId: string;
   discordId: string;
 }
+
+export enum STATUS_CARD {
+  DISABLE = "DISABLE",
+  FOLLOW = "FOLLOW",
+  VERIFY = "VERIFY",
+}

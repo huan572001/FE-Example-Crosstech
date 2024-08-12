@@ -1,27 +1,20 @@
-import { AppButton } from "@/components/button/AppButton";
+import { useEffect } from "react";
+import { CardConect } from "./component/CardConect";
 import { useAppDispatch } from "@/hooks/store";
-import { setOpenModal } from "@/redux/slice/modalSlice";
-import { ListAccount } from "./component";
-import { TestAPI } from "./component/TestAPI";
+import { getTaskUser } from "@/redux/slice/homeSlice";
+import { Slider } from "./component/Slider";
 
 export const Homepage = () => {
   const dispatch = useAppDispatch();
-  const onOpenModal = () => {
-    console.log("hii");
-
-    dispatch(setOpenModal({ isOpenModal: true }));
-  };
+  useEffect(() => {
+    dispatch(getTaskUser({ address: "huan123" }));
+  }, []);
   return (
     <div className="mt-28">
-      <AppButton
-        // loading={true}
-        onClick={() => onOpenModal()}
-        className="cursor-pointer"
-      >
-        redux
-      </AppButton>
-      <ListAccount />
-      <TestAPI />
+      <CardConect />
+      <Slider />
+      {/* <ListAccount /> */}
+      {/* <TestAPI /> */}
     </div>
   );
 };
